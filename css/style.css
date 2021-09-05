@@ -107,7 +107,6 @@ section .footer .row {
 section .footer .row.rowA {
     display: flex;
     justify-content: space-between;
-
 }
 
 section .footer .row.rowA ul {
