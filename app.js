@@ -1,3 +1,4 @@
+const port = process.env.PORT || 5000;
 const express = require("express");
 const ytdl = require("ytdl-core");
 const path = require('path');
@@ -21,4 +22,4 @@ app.get('/download', (req, res) => {
     ytdl(url, {format: 'mp4', quality: 'highestvideo'}).pipe(res);
 });
 
-app.listen(5000);
+app.listen(port, () => console.log(`Listening on port ${port}`));
