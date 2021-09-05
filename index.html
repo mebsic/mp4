@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang = "en">
 <head>
-   <meta http-equiv = "content-type" content = "text/html; charset = UTF-8">
-   <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
    <meta charset = "UTF-8">
    <title>YouTube to MP4</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-   <link rel="icon" type="image/jpg" href="images/icon.png"/>
-   <link href = "css/style.css" rel = "stylesheet">
-   <script src="js/script.js"></script>
+   <link rel="shortcut icon" href="favicon.ico"/>
+   <link type="text/css" href = "css/style.css" rel = "stylesheet">
    <style>
     @media screen and (max-width: 600px) {
-        section .main form {
+        section .main {
             width: 300px;
             display: flex;
             flex-direction: column;
@@ -20,25 +17,29 @@
             justify-content: center;
         }
         section .main .buttons {
-            margin: 20px 10px 5px 35px;
+            margin: 20px 10px 5px 5px;
         }
     }
    </style>
 </head>
-    <body>
-        <section>
-            <div class = "main">
-           <form id = "form" method = "post">
-		<a href = "/" style="font-weight: bold; padding: 0px 0px 20px 0px; color: #bc0606; font-size: 23px; text-decoration: none;">
-			<img src = "images/icon.png" width = "40px" height = "45px" style="vertical-align: middle; padding-bottom: 5px;">
+<body>
+    <section>
+    <form action = "http://localhost:5000/download/" method = "GET">
+        <div class = "main">
+		    <a href = "/" style="font-weight: bold; padding: 0px 0px 20px 0px; color: #bc0606; font-size: 23px; text-decoration: none;">
+			    <img src = "images/icon.png" width = "40px" height = "45px" style="vertical-align: middle; padding-bottom: 5px;">
 				YouTube to MP4</a>
                 <div class = "urlBox">
-                    <input type = "url" pattern = "^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$" name = "url" id = "url" class = "url" placeholder = "Enter YouTube video URL" required autocomplete = "off">
+                    <input type = "url" name = "url" id = "url" class = "url" pattern = "^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$" placeholder = "Enter YouTube video URL" required autocomplete = "off">
                 </div>
                 <div class = "buttons">
-                    <button type = "submit" id = "submit"><i class="fa fa-download"></i> Download MP4 (video)</button>
-                    <button type = "submit" id = "submit"><i class="fa fa-download"></i> Download MP3 (audio)</button>
-	            <br><br><br><br>
+                    <button type = "submit" id = "download"><i class = "fa fa-download"></i>&nbsp;Download MP4 (video)</button>
+                    <script type = "text/javascript">
+                         document.getElementById("download").addEventListener("click", clearURL);
+                         function clearURL() {
+                            setTimeout("document.getElementById('url').value = ''", 3000);
+                         } 
+                    </script>  
                 </div>
             <div class = "footer">
                 <div class = "row rowA">
@@ -52,8 +53,8 @@
                     </ul>
                 </div>
             </div>
-            </form>
             </div>
+        </form>
         </section>
     </body>
 </html>
