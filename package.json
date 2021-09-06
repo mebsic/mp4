@@ -22,7 +22,6 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-csp-header": "^5.0.0",
-    "heroku-ssl-redirect": "^0.1.1",
     "path": "^0.12.7",
     "ytdl-core": "^4.9.1"
   }

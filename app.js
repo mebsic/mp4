@@ -1,11 +1,9 @@
 const port = process.env.PORT || 5000;
-const sslRedirect = require('heroku-ssl-redirect').default;
 const express = require("express");
 const ytdl = require("ytdl-core");
 const path = require("path");
 const app = express();
 
-app.use(sslRedirect(['production'], 301));
 app.use(express.json());
 app.use(express.static(__dirname));
 
