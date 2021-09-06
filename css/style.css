@@ -43,6 +43,14 @@ section .main {
     justify-content: center;
 }
 
+section .main form {
+    width: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 section .main .urlBox {
     position: relative;
     width: 100%;

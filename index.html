@@ -9,14 +9,21 @@
    <link type="text/css" href = "css/style.css" rel = "stylesheet">
    <style>
     @media screen and (max-width: 600px) {
-        section form .main {
+        section .main {
             width: 300px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
-        section form .main .buttons {
+        section .main form {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        section .main .buttons {
             margin: 20px 10px 0px 5px;
         }
     }
@@ -24,8 +31,8 @@
 </head>
 <body>
     <section>
-    <form action = "/download" method = "GET">
         <div class = "main">
+        <form action = "/download" method = "GET">
 		    <a href = "/" style="font-weight: bold; padding: 0px 0px 20px 0px; color: #bc0606; font-size: 23px; text-decoration: none;">
 			    <img src = "images/icon.png" width = "40px" height = "45px" style="vertical-align: middle; padding-bottom: 5px;">
 				YouTube to mp4</a>
@@ -53,8 +60,8 @@
                     </ul>
                 </div>
             </div>
-            </div>
         </form>
+        </div>
         </section>
     </body>
 </html>
