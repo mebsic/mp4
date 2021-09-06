@@ -19,7 +19,7 @@ app.get('/download', (req, res) => {
     var url = req.query.url;
 
     res.header("Content-Disposition", 'attachment; filename="video.mp4');
-    ytdl(url, {format: 'mp4', quality: 'highestvideo'}).pipe(res);
+    ytdl(url, {format: 'mp4', quality: 'highest'}).pipe(res);
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
