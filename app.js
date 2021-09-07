@@ -19,7 +19,6 @@ app.get("/", function(response) {
 
 app.get('/download', (req, res) => {
     var url = req.query.url;
-    res.header("Content-Disposition", 'attachment; filename="video.mp4');
 
     ytdl.getInfo(url).then(url => {
         audioStream = ytdl.downloadFromInfo(url, { format: 'mp3', quality: 'highestaudio' });
@@ -41,6 +40,7 @@ app.get('/download', (req, res) => {
 
         audioStream.pipe(ffmpegProcess.stdio[3]);
         videoStream.pipe(ffmpegProcess.stdio[4]);
+        res.header("Content-Disposition", 'attachment; filename="video.mp4');
         ffmpegProcess.stdio[5].pipe(res);
     });
 });
