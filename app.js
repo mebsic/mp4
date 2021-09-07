@@ -17,17 +17,6 @@ app.get("/", function(response) {
     response.sendFile(__dirname);
 });
 
-if (process.env.NODE_ENV === 'production') {
-    app.use((req, res, next) => {
-        
-      if (req.header('x-forwarded-proto') !== 'https') {
-        res.redirect(`https://${req.header('host')}${req.url}`);
-      } else {
-        next();
-      }
-    })
-  }
-
 app.get('/download', (req, res) => {
     var url = req.query.url;
 
