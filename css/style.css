@@ -44,7 +44,7 @@ section .main {
 }
 
 section .text {
-    width: 850px;
+    width: 800px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
