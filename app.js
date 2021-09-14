@@ -18,11 +18,11 @@ app.get("/", (response) => {
 });
 
 app.get("/terms", (response) => {
-    response.sendFile(path.join(__dirname, 'terms.html'));
+    response.sendFile(path.join(__dirname, '/terms.html'));
 });
 
 app.use((res) => {
-    res.status(404).send('<span style = "font-family: Arial, Helvetica, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center;">Error 404<br>Page not found.</span>');
+    res.status(404).send('<div class = "main">Error 404<br>Page not found.</div>');
 });
 
 app.get('/download', (req, res) => {
