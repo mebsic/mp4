@@ -17,12 +17,8 @@ app.get("/", (response) => {
     response.sendFile(__dirname);
 });
 
-app.get('/terms', (response) => {
-    response.sendFile(path.join(__dirname, '/terms.html'));
-});
-
 app.use((res) => {
-    res.send('<div class = "main">Error 404<br>Page not found.</div>');
+    res.status(404).send('<div class = "main">Error 404<br>Page not found.</div>');
 });
 
 app.get('/download', (req, res) => {
