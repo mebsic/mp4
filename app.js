@@ -18,11 +18,11 @@ app.get("/", (response) => {
 });
 
 app.get("/terms", (response) => {
-    response.sendFile(path.join(__dirname, '/terms.html'));
+    response.sendFile(path.join(__dirname, './terms.html'));
 });
 
 app.use(function(req, res) {
-    res.status(404).render('404.jade');
+    res.status(404).render('Error 404 ' + '404.jade');
 });
 
 app.get('/download', (req, res) => {
