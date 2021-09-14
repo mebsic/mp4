@@ -13,8 +13,16 @@ app.get('/favicon.ico', (response) => {
     response.sendFile(path.resolve(__dirname + '/favicon.ico'));
 });
 
-app.get("/", function(response) {
+app.get("/", (response) => {
     response.sendFile(__dirname);
+});
+
+app.get("/terms", (response) => {
+    response.sendFile(path.resolve(__dirname + '/terms.html'));
+});
+
+app.use(function(req, res) {
+    res.status(404).render('404.jade');
 });
 
 app.get('/download', (req, res) => {
