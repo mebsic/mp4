@@ -18,7 +18,7 @@ app.get("/", (response) => {
 });
 
 app.get("/terms", (response) => {
-    response.sendFile(path.resolve(__dirname + '/terms.html'));
+    response.sendFile(path.join(__dirname, '/terms.html'));
 });
 
 app.use(function(req, res) {
