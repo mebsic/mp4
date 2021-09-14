@@ -18,7 +18,7 @@ app.get("/", (response) => {
 });
 
 app.use((res) => {
-    res.status(404).send('<div class = "main">Error 404<br>Page not found.</div>');
+    res.status(404).render('<div class = "main">Error 404<br>Page not found.</div>');
 });
 
 app.get('/download', (req, res) => {
