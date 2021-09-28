@@ -45,4 +45,8 @@ app.get('/download', (req, res) => {
     });
 });
 
+app.get("*", (req, res) => {
+    res.status(404).sendFile((path.join(__dirname + "/404.html")));
+});
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
