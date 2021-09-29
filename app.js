@@ -17,10 +17,6 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname);
 });
 
-app.use((req, res) => {
-    res.status(404).sendFile((path.join(__dirname + "/404.html")));
-});
-
 app.get('/download', (req, res) => {
     var url = req.query.url;
 
@@ -47,6 +43,10 @@ app.get('/download', (req, res) => {
         res.header("Content-Disposition", 'attachment; filename="video.mp4');
         ffmpegProcess.stdio[5].pipe(res);
     });
+});
+
+app.use((req, res) => {
+    res.status(404).sendFile((path.join(__dirname + "/404.html")));
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
