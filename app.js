@@ -17,10 +17,6 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname);
 });
 
-app.get("/terms", (req, res) => {
-    res.sendFile(path.resolve(__dirname + "/terms.html"));
-});
-
 app.get("*", (req, res) => {
     res.status(404).sendFile((path.join(__dirname + "/404.html")));
 });
