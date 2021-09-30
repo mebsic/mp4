@@ -134,7 +134,9 @@ section .footer .row {
 
 section .footer .row.rowA {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 section .footer .row.rowA ul {
