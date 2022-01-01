@@ -9,3 +9,5 @@ Clone the repository<br>
 ``npm install --save ffmpeg-static@latest``
 #### Running
 Use ``node app.js`` and open browser on ``http://localhost:5000``
+#### License
+[MIT License](https://github.com/mebsic/mp4/blob/master/LICENSE)
